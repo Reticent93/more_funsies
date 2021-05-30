@@ -4,6 +4,12 @@ import cors from 'cors'
 
 import postRoutes from './routes/posts.js'
 
+// const express = require('express')
+// const bodyParser = require('body-parser')
+// const cors = require('cors')
+//
+// const postRoutes = require('./routes/posts')
+
 const app = express()
 
 app.use(bodyParser.json({limit: '30mb', extended: true}));
