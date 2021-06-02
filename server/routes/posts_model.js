@@ -9,10 +9,10 @@ const find = () => {
     return db('posts')
 }
 
-const findByUserId = () => {
+const findByUserId = (id) => {
     return db('posts as p')
         .join('users as u', 'u.id', 'p.user_id')
-        .where('p.user_id', 'id')
+        .where('p.user_id', id)
         .select('p.id', 'p.contents', 'u.name')
 }
 
