@@ -16,6 +16,9 @@ const findByUserId = (id) => {
         .select('p.id', 'p.contents', 'u.name')
 }
 
+const update = (id, post) => {
+    return db('posts').where(id).update(post)
+}
 
 
-export default {add, find, findByUserId}
+export default {add, find, findByUserId, update}
