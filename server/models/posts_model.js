@@ -1,25 +1,24 @@
 import db from '../data/config.js'
 
-const add = (post) => {
-    const [id] = db('posts').insert(post)
+async function add(post){
+    const [id] = await db('posts').insert(post)
     return findById(id)
 }
 
-const find = () => {
+function find(){
     return db('posts')
 }
 
-const findById = (id) => {
-    return db('posts').where({id})
+function findById(id){
+    return db('posts').where({id: Number(id) }).first()
 }
 
-const update = (id, post) => {
-    return db('posts').where(id).update(post)
+function update(id, changes) {
+    return db('posts').where('id', Number(id)).update(changes)
 }
 
-const remove = (id) => {
-    return db('posts').where({id}).del()
+function remove(id) {
+    return db('posts').where('id', Number(id)).del()
 }
-
 
 export default {add, find, findById, update, remove}
