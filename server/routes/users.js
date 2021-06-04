@@ -1,8 +1,8 @@
 import express from "express";
 
 
-import postRouter from '../routes/posts.js'
-import Users from './users_model.js'
+import postRouter from './posts.js'
+import Users from '../models/users_model.js'
 
 
 const router = express.Router({
