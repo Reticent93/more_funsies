@@ -1,13 +1,15 @@
 import express from "express";
 import Posts from '../models/posts_model.js'
 
+import commentRouter from './comments.js'
+
 
 
 const router = express.Router({
     mergeParams:true,
 })
+router.use('/:id/comments', commentRouter)
 
-// router.use("/:id/comments", commentRouter);
 
 const postIdError = {message: "The post with the specified ID does not exist"}
 

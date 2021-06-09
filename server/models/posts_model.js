@@ -1,5 +1,9 @@
 import db from '../data/config.js'
 
+
+
+
+
 async function add(post){
     const [id] = await db('posts').insert(post)
     return findById(id)
